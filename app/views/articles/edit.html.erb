@@ -1,25 +1,2 @@
 <h1> edit existing article</h1>
-<% if @article.errors.any? %>
-<h2> The following errors prevented save</h2>
-<ul>
- <% @article.errors.full_messages.each do |msg| %>
- <li><%= msg %></li>
- <% end %>
-</ul>
-<% end %>
-
-<%= form_for @article do |f| %>
- <p>
-   <%= f.label :Title %>
-   <%= f.text_field :title %>
-   </p>
-   <%= f.label :Description %>
-   <%= f.text_area :description %>
-   </p>
-   <p>
-       <%= f.submit %>
-   </p>
-
-<% end %>
-
-<%= link_to "back", articles_path %>
+<%= render 'form' %>
